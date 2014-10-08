@@ -3,6 +3,7 @@
 * [![Build Status](https://travis-ci.org/jbox-web/acts_as_auditable.svg?branch=devel)](https://travis-ci.org/jbox-web/acts_as_auditable)
 * [![Coverage Status](https://coveralls.io/repos/jbox-web/acts_as_auditable/badge.png?branch=devel)](https://coveralls.io/r/jbox-web/acts_as_auditable?branch=devel)
 * [![Code Climate](https://codeclimate.com/github/jbox-web/acts_as_auditable/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/acts_as_auditable)
+* [![Test Coverage](https://codeclimate.com/github/jbox-web/acts_as_auditable/badges/coverage.svg)](https://codeclimate.com/github/jbox-web/acts_as_auditable)
 * [![Dependency Status](https://gemnasium.com/jbox-web/acts_as_auditable.svg)](https://gemnasium.com/jbox-web/acts_as_auditable)
 
 ## Audits ActiveRecord models
