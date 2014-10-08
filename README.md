@@ -5,7 +5,7 @@
 * [![Coverage Status](https://coveralls.io/repos/continuum/espinita/badge.png?branch=master)](https://coveralls.io/r/continuum/espinita?branch=master)
 * [![Code Climate](https://codeclimate.com/github/jbox-web/acts_as_auditable/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/acts_as_auditable)
 
-## Audits activerecord models like a boss
+## Audits ActiveRecord models
 
 Tested in rails 4.0 / 4.1 and ruby 1.9.3 / 2.0.0.
 
