@@ -4,5 +4,6 @@ gem 'rails', '~> 4.0.0'
 gem 'acts_as_auditable', path: '../'
 
 gem 'coveralls', require: false
+gem 'codeclimate-test-reporter', require: false
 
 gemspec path: '../'
