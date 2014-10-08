@@ -7,9 +7,13 @@
 
 ## Audits ActiveRecord models
 
-Tested in rails 4.0 / 4.1 and ruby 1.9.3 / 2.0.0.
-
 This project is a merge of [audited gem](https://github.com/collectiveidea/audited) and [espinita gem](https://github.com/continuum/espinita).
+
+If found that the Espinita implementation as a Rails engine was a good idea and cleaner than the Sweeper objects.
+But it misses the ```has_associated_audits``` method from Audited gem.
+On the top of that, the scope name wasn't very meaningfull, so I renamed it to ActsAsAuditable.
+Thus this new gem.
+
 
 ## Installation
 
