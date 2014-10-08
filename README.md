@@ -12,9 +12,8 @@ This project is a merge of [audited gem](https://github.com/collectiveidea/audit
 Explanation :
 
 If found that the Espinita implementation as a Rails engine was a good idea and cleaner than the Sweeper objects of Audited. But it misses the ```has_associated_audits``` method from Audited gem.
-On the top of that, the scope name wasn't very meaningfull, so I renamed it to ActsAsAuditable.
-Thus this new gem.
-
+On the top of that, the scope name (Espinita) wasn't very meaningfull, so I renamed it to ```ActsAsAuditable```.
+Thus this new gem. It provides the same database schema than Audited so uou can easily switch from Audited to ActsAsAuditable.
 
 ## Installation
 
