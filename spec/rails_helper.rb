@@ -1,13 +1,12 @@
-require 'coveralls'
-Coveralls.wear!
-
 require 'simplecov'
 require 'simplecov-rcov'
+require 'coveralls'
 
 ## Configure SimpleCov
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::RcovFormatter
+  SimpleCov::Formatter::RcovFormatter,
+  Coveralls::SimpleCov::Formatter
 ]
 
 SimpleCov.start 'rails'
