@@ -14,7 +14,7 @@ Explanation :
 
 If found that the Espinita implementation as a Rails engine was a good idea and cleaner than the Sweeper objects of Audited. But it misses the ```has_associated_audits``` method from Audited gem.
 On the top of that, the scope name (Espinita) wasn't very meaningfull, so I renamed it to ```ActsAsAuditable```.
-Thus this new gem. 
+Thus this new gem.
 
 It provides the same database schema than Audited so you can easily switch from Audited to ActsAsAuditable.
 
@@ -36,7 +36,7 @@ $ rake db:migrate
 
 ```ruby
 class Post < ActiveRecord::Base
-  auditable
+  acts_as_auditable
 end
 
 @post.create(title: "an awesome blog post" )
@@ -52,7 +52,7 @@ ActsAsAuditable provides options to include or exclude columns to trigger the cr
 
 ```ruby
 class Post < ActiveRecord::Base
-  auditable only: [:title] # except: [:some_column]
+  acts_as_auditable only: [:title] # except: [:some_column]
 end
 ```
 
@@ -60,7 +60,7 @@ And lets you declare the callbacks you want for audit creation:
 
 ```ruby
 class Post < ActiveRecord::Base
-  auditable on: [:create]  # on: [:create, :update]
+  acts_as_auditable on: [:create]  # on: [:create, :update]
 end
 ```
 

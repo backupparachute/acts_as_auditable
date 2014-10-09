@@ -3,5 +3,5 @@ class Comment < ActiveRecord::Base
   belongs_to :recipe
 
   ## Audited
-  auditable associated_with: :recipe
+  acts_as_auditable associated_with: :recipe
 end

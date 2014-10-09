@@ -45,7 +45,7 @@ module ActsAsAuditable
       end
 
       class CustomUserSubclass < CustomUser
-        auditable
+        acts_as_auditable
       end
 
       it "should include audited classes" do

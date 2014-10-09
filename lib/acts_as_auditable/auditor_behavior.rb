@@ -13,7 +13,7 @@ module ActsAsAuditable
 
       @@default_excluded = %w(lock_version created_at updated_at created_on updated_on)
 
-      def auditable(options = {})
+      def acts_as_auditable(options = {})
         self.audit_callbacks = []
         self.audit_callbacks << options[:on] unless options[:on].blank?
         self.audit_callbacks.flatten!
@@ -22,16 +22,16 @@ module ActsAsAuditable
         before_update  :audit_update  if self.audit_callbacks.empty? || self.audit_callbacks.include?(:update)
         before_destroy :audit_destroy if self.audit_callbacks.empty? || self.audit_callbacks.include?(:destroy)
 
-        self.excluded_cols = (@@default_excluded)
+        self.excluded_cols = @@default_excluded
 
         if options[:only]
-          options[:only] = [options[:only]].flatten.map { |x| x.to_s }
-          self.excluded_cols = (self.column_names - options[:only] )
+          options[:only]     = [options[:only]].flatten.map { |x| x.to_s }
+          self.excluded_cols = self.column_names - options[:only]
         end
 
         if options[:except]
-          options[:except] = [options[:except]].flatten.map { |x| x.to_s }
-          self.excluded_cols = (@@default_excluded) + options[:except]
+          options[:except]   = [options[:except]].flatten.map { |x| x.to_s }
+          self.excluded_cols = @@default_excluded + options[:except]
         end
 
         self.audit_associated_with = options[:associated_with]

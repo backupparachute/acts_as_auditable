@@ -21,7 +21,7 @@ end
 describe AuditsController, type: :controller do
 
   before(:each) do
-    Recipe.auditable
+    Recipe.acts_as_auditable
   end
 
   let(:recipe){ FactoryGirl.create(:recipe) }

@@ -3,6 +3,6 @@ class Recipe < ActiveRecord::Base
   has_many   :comments, dependent: :destroy
 
   ## Audited
-  auditable
+  acts_as_auditable
   has_associated_audits
 end

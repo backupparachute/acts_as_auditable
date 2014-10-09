@@ -15,14 +15,14 @@ module Models
         expect(subject.audits).to be_empty
       end
 
-      it "general auditable only method" do
-        recipe.auditable only: [:name]
+      it "general acts_as_auditable only method" do
+        recipe.acts_as_auditable only: [:name]
         expect(recipe.permitted_columns).to include("name")
         expect(recipe.permitted_columns.size).to eql 1
       end
 
-      it "general auditable except method" do
-        recipe.auditable except: [:name]
+      it "general acts_as_auditable except method" do
+        recipe.acts_as_auditable except: [:name]
         expect(recipe.excluded_cols).to include("name")
         expect(recipe.permitted_columns).not_to include("name")
       end
@@ -33,7 +33,7 @@ module Models
       let(:recipe){ create(:recipe) }
 
       let(:updated_model) do
-        recipe.class.auditable only: [:name]
+        recipe.class.acts_as_auditable only: [:name]
         recipe.update_attribute(:name , "Foo" )
         recipe
       end
@@ -56,7 +56,7 @@ module Models
       let(:recipe){ create(:recipe) }
 
       let(:updated_model) do
-        recipe.class.auditable except: [:name]
+        recipe.class.acts_as_auditable except: [:name]
         recipe.update_attribute(:name , "Foo" )
         recipe
       end
@@ -86,7 +86,7 @@ module Models
       let(:recipe){ create(:recipe) }
 
       let(:updated_model) do
-        recipe.class.auditable
+        recipe.class.acts_as_auditable
         recipe.update_attributes(name: "Foo", audit_comment: "Some comment" )
         recipe
       end
@@ -113,7 +113,7 @@ module Models
       let(:recipe){ create(:recipe) }
 
       let(:updated_model) do
-        recipe.class.auditable
+        recipe.class.acts_as_auditable
         recipe.update_attributes(name: "Foo", audit_comment: "Some comment" )
         recipe
       end
@@ -131,7 +131,7 @@ module Models
         [:create, :update, :destroy].each do |c|
           Recipe.reset_callbacks(c)
         end
-        Recipe.auditable on: [:update]
+        Recipe.acts_as_auditable on: [:update]
         create(:recipe)
       end
 
@@ -151,7 +151,7 @@ module Models
         [:create, :update, :destroy].each do |c|
           Recipe.reset_callbacks(c)
         end
-        Recipe.auditable on: [:create]
+        Recipe.acts_as_auditable on: [:create]
         create(:recipe)
       end
 
@@ -173,7 +173,7 @@ module Models
         [:create, :update, :destroy].each do |c|
           Recipe.reset_callbacks(c)
         end
-        Recipe.auditable on: [:update]
+        Recipe.acts_as_auditable on: [:update]
         create(:recipe)
       end
 
@@ -195,7 +195,7 @@ module Models
         [:create, :update, :destroy].each do |c|
           Recipe.reset_callbacks(c)
         end
-        Recipe.auditable on: [:destroy]
+        Recipe.acts_as_auditable on: [:destroy]
         create(:recipe)
       end
 
@@ -255,7 +255,7 @@ module Models
         [:create, :update, :destroy].each do |c|
           Recipe.reset_callbacks(c)
         end
-        Recipe.auditable on: [:create, :update, :destroy]
+        Recipe.acts_as_auditable on: [:create, :update, :destroy]
         create(:recipe)
       end
 
